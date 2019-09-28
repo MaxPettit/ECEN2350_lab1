@@ -6,6 +6,7 @@
 module slide_in(
 
 		input [9:0]  SW,
+		input 	     MODE,
    
 		output [7:0] HEX5,
 		output [7:0] HEX4,
@@ -44,19 +45,24 @@ module slide_in(
    
    always @(x, y)
      begin
-	  a = x;
-	  b = y;
-
-	if(x[3]) begin
-	   a = ~x + 1;
-	   
-	end
-	if(y[3]) begin
-	   b = ~y + 1;
-	   
-	end
+	a = x;
+	b = y;
 	
-     end
+	if(MODE) begin //2s Complement
+	   
+	   if(x[3]) begin
+	      a = ~x + 1;
+	      
+	   end
+	   if(y[3]) begin
+	      b = ~y + 1;
+	      
+	   end
+	   
+	end // if (MODE)
+	
+     end // always @ (x, y)
+   
    
    
    

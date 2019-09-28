@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at birthdays.v(23): always construct contains both blocking and non-blocking assignments File: /home/ecen1310/ecen2350/lab_1/block1/source/birthdays.v Line: 23

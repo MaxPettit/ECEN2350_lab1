@@ -16,12 +16,19 @@ module birthdays(
    reg [3:0] 		      a3; 
    reg [3:0] 		      a4;
    reg [3:0] 		      a5; 
+   reg 			      k;
+
+      
    
-   
-   
-   always @(KEY[0])
+   always @(KEY[1])
      begin
 	if(~KEY[1]) begin
+	   k = ~k;
+	   
+	end
+	
+
+	if(k) begin
 	   a0 <= 4'b0000;
 	   a1 <= 4'b0000;
 	   a2 <= 4'b0110;
@@ -42,7 +49,7 @@ module birthdays(
 
    hex_driver X0 (
 		  .NUM (a0),
-		  .HEX(HEX0),
+		  .HEX(HEX0)
 		  );
    hex_driver X1 (
 		  .NUM (a1),

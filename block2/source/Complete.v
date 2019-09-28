@@ -41,13 +41,14 @@ module Complete(
 //  Structural coding
 //=======================================================
 
-slide_in U0(
-	.SW (SW),
-			.HEX2 (HEX2),
-			.HEX3 (HEX3),
-			.HEX4 (HEX4),
-			.HEX5 (HEX5)
-			);
+   slide_in U0(
+	       .SW (SW),
+	       .MODE(1'b1),
+	       .HEX2 (HEX2),
+	       .HEX3 (HEX3),
+	       .HEX4 (HEX4),
+	       .HEX5 (HEX5)
+	       );
 
 
 endmodule
