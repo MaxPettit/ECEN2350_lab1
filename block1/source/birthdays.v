@@ -18,10 +18,18 @@ module birthdays(
    reg [3:0] 		      a5; 
    reg 			      k;
 
-      
+	initial begin
+      a0 = 4'b0000;
+	   a1 = 4'b0000;
+	   a2 = 4'b0110;
+	   a3 = 4'b0001;
+	   a4 = 4'b0001;
+	   a5 = 4'b0001;
+	end
    
-   always @(KEY[1])
+   always @(posedge KEY[1])
      begin
+	  
 	if(~KEY[1]) begin
 	   k = ~k;
 	   

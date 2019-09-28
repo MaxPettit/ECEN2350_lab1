@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Complete
-Sat Sep 28 14:41:14 2019
+Sat Sep 28 15:45:03 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -12,7 +12,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. User-Specified and Inferred Latches
+  7. Registers Removed During Synthesis
   8. General Register Statistics
   9. Port Connectivity Checks: "birthdays:U0|hex_driver:X5"
  10. Port Connectivity Checks: "birthdays:U0|hex_driver:X4"
@@ -49,15 +49,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 28 14:41:14 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 28 15:45:03 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Complete                                    ;
 ; Top-level Entity Name              ; Complete                                    ;
 ; Family                             ; MAX 10                                      ;
 ; Total logic elements               ; 9                                           ;
 ;     Total combinational functions  ; 9                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
+;     Dedicated logic registers      ; 1                                           ;
+; Total registers                    ; 1                                           ;
 ; Total pins                         ; 73                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -166,36 +166,36 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 9                ;
-;                                             ;                  ;
-; Total combinational functions               ; 9                ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 0                ;
-;     -- 3 input functions                    ; 0                ;
-;     -- <=2 input functions                  ; 9                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 9                ;
-;     -- arithmetic mode                      ; 0                ;
-;                                             ;                  ;
-; Total registers                             ; 0                ;
-;     -- Dedicated logic registers            ; 0                ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 73               ;
-;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; birthdays:U0|k~0 ;
-; Maximum fan-out                             ; 18               ;
-; Total fan-out                               ; 116              ;
-; Average fan-out                             ; 0.75             ;
-+---------------------------------------------+------------------+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 9                  ;
+;                                             ;                    ;
+; Total combinational functions               ; 9                  ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 0                  ;
+;     -- 3 input functions                    ; 0                  ;
+;     -- <=2 input functions                  ; 9                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 9                  ;
+;     -- arithmetic mode                      ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 1                  ;
+;     -- Dedicated logic registers            ; 1                  ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 73                 ;
+;                                             ;                    ;
+; Embedded Multiplier 9-bit elements          ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; birthdays:U0|a2[0] ;
+; Maximum fan-out                             ; 18                 ;
+; Total fan-out                               ; 118                ;
+; Average fan-out                             ; 0.76               ;
++---------------------------------------------+--------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -203,22 +203,31 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name     ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+-------------+--------------+
-; |Complete                  ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 73   ; 0            ; 0          ; |Complete               ; Complete    ; work         ;
-;    |birthdays:U0|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|birthdays:U0  ; birthdays   ; work         ;
+; |Complete                  ; 9 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 73   ; 0            ; 0          ; |Complete               ; Complete    ; work         ;
+;    |birthdays:U0|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|birthdays:U0  ; birthdays   ; work         ;
 ;    |switch_led:U1|         ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|switch_led:U1 ; switch_led  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; birthdays:U0|k                                     ; KEY[1]              ; yes                    ;
-; Number of user-specified and inferred latches = 1  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; birthdays:U0|a5[1..3]                  ; Stuck at GND due to stuck port data_in ;
+; birthdays:U0|a4[1,3]                   ; Stuck at GND due to stuck port data_in ;
+; birthdays:U0|a3[2,3]                   ; Stuck at GND due to stuck port data_in ;
+; birthdays:U0|a2[3]                     ; Stuck at GND due to stuck port data_in ;
+; birthdays:U0|a1[0..3]                  ; Stuck at GND due to stuck port data_in ;
+; birthdays:U0|a0[0..3]                  ; Stuck at GND due to stuck port data_in ;
+; birthdays:U0|a2[1,2]                   ; Merged with birthdays:U0|a2[0]         ;
+; birthdays:U0|a3[0,1]                   ; Merged with birthdays:U0|a2[0]         ;
+; birthdays:U0|a4[0,2]                   ; Merged with birthdays:U0|a2[0]         ;
+; birthdays:U0|a5[0]                     ; Merged with birthdays:U0|a2[0]         ;
+; birthdays:U0|k                         ; Merged with birthdays:U0|a2[0]         ;
+; Total Number of Removed Registers = 24 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -226,7 +235,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 1     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -236,49 +245,44 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "birthdays:U0|hex_driver:X5"                                                                                                                      ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity ; Details                                                                                                                                      ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; NUM[3..1] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; DEC       ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; SIGN      ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "birthdays:U0|hex_driver:X5"                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SIGN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "birthdays:U0|hex_driver:X4"                                                                                                                   ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type  ; Severity ; Details                                                                                                                                      ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; NUM[3] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; NUM[1] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; DEC    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; SIGN   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "birthdays:U0|hex_driver:X4"                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SIGN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "birthdays:U0|hex_driver:X3"                                                                                                                      ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity ; Details                                                                                                                                      ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; NUM[3..2] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; DEC       ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; SIGN      ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "birthdays:U0|hex_driver:X3"                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SIGN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "birthdays:U0|hex_driver:X2"                                                                                                                   ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type  ; Severity ; Details                                                                                                                                      ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; NUM[3] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; DEC    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; SIGN   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "birthdays:U0|hex_driver:X2"                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SIGN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -286,7 +290,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                      ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; NUM  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
 ; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 ; SIGN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -297,7 +300,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                      ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; NUM  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
 ; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 ; SIGN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -309,6 +311,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 73                          ;
+; cycloneiii_ff         ; 1                           ;
+;     plain             ; 1                           ;
 ; cycloneiii_lcell_comb ; 20                          ;
 ;     normal            ; 20                          ;
 ;         0 data inputs ; 2                           ;
@@ -335,7 +339,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Sep 28 14:40:50 2019
+    Info: Processing started: Sat Sep 28 15:44:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Complete -c Complete
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
@@ -351,10 +355,7 @@ Info (12127): Elaborating entity "Complete" for the top level hierarchy
 Info (12128): Elaborating entity "switch_led" for hierarchy "switch_led:U1" File: /home/ecen1310/ecen2350/lab_1/block1/source/Complete.v Line: 49
 Warning (10034): Output port "led[9..8]" at switch_led.v(5) has no driver File: /home/ecen1310/ecen2350/lab_1/block1/source/switch_led.v Line: 5
 Info (12128): Elaborating entity "birthdays" for hierarchy "birthdays:U0" File: /home/ecen1310/ecen2350/lab_1/block1/source/Complete.v Line: 59
-Warning (10235): Verilog HDL Always Construct warning at birthdays.v(26): variable "k" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ecen1310/ecen2350/lab_1/block1/source/birthdays.v Line: 26
-Warning (10240): Verilog HDL Always Construct warning at birthdays.v(23): inferring latch(es) for variable "k", which holds its previous value in one or more paths through the always construct File: /home/ecen1310/ecen2350/lab_1/block1/source/birthdays.v Line: 23
-Info (10041): Inferred latch for "k" at birthdays.v(25) File: /home/ecen1310/ecen2350/lab_1/block1/source/birthdays.v Line: 25
-Info (12128): Elaborating entity "hex_driver" for hierarchy "birthdays:U0|hex_driver:X0" File: /home/ecen1310/ecen2350/lab_1/block1/source/birthdays.v Line: 53
+Info (12128): Elaborating entity "hex_driver" for hierarchy "birthdays:U0|hex_driver:X0" File: /home/ecen1310/ecen2350/lab_1/block1/source/birthdays.v Line: 61
 Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block1/source/Complete.v Line: 14
@@ -404,11 +405,11 @@ Info (21057): Implemented 82 device resources after synthesis - the final resour
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 58 output pins
     Info (21061): Implemented 9 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 948 megabytes
-    Info: Processing ended: Sat Sep 28 14:41:14 2019
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:20
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 947 megabytes
+    Info: Processing ended: Sat Sep 28 15:45:03 2019
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+
