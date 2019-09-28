@@ -1,0 +1,240 @@
+$date
+	Fri Sep 27 00:35:31 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module block1_tb $end
+$var wire 10 ! LED [9:0] $end
+$var wire 8 " HEX3 [7:0] $end
+$var wire 8 # HEX2 [7:0] $end
+$var wire 8 $ HEX1 [7:0] $end
+$var wire 8 % HEX0 [7:0] $end
+$var reg 2 & KEY [1:0] $end
+$var reg 10 ' SW [9:0] $end
+$scope module U1 $end
+$var wire 1 ( ADC_CLK_10 $end
+$var wire 2 ) KEY [1:0] $end
+$var wire 1 * MAX10_CLK1_50 $end
+$var wire 1 + MAX10_CLK2_50 $end
+$var wire 10 , SW [9:0] $end
+$var wire 10 - LEDR [9:0] $end
+$var wire 8 . HEX5 [7:0] $end
+$var wire 8 / HEX4 [7:0] $end
+$var wire 8 0 HEX3 [7:0] $end
+$var wire 8 1 HEX2 [7:0] $end
+$var wire 8 2 HEX1 [7:0] $end
+$var wire 8 3 HEX0 [7:0] $end
+$scope module U0 $end
+$var wire 2 4 KEY [1:0] $end
+$var wire 8 5 HEX5 [7:0] $end
+$var wire 8 6 HEX4 [7:0] $end
+$var wire 8 7 HEX3 [7:0] $end
+$var wire 8 8 HEX2 [7:0] $end
+$var wire 8 9 HEX1 [7:0] $end
+$var wire 8 : HEX0 [7:0] $end
+$scope module X0 $end
+$var wire 1 ; DEC $end
+$var wire 5 < NUM [4:0] $end
+$var wire 1 = SIGN $end
+$var reg 8 > HEX [7:0] $end
+$upscope $end
+$scope module X1 $end
+$var wire 1 ? DEC $end
+$var wire 5 @ NUM [4:0] $end
+$var wire 1 A SIGN $end
+$var reg 8 B HEX [7:0] $end
+$upscope $end
+$scope module X2 $end
+$var wire 1 C DEC $end
+$var wire 5 D NUM [4:0] $end
+$var wire 1 E SIGN $end
+$var reg 8 F HEX [7:0] $end
+$upscope $end
+$scope module X3 $end
+$var wire 1 G DEC $end
+$var wire 5 H NUM [4:0] $end
+$var wire 1 I SIGN $end
+$var reg 8 J HEX [7:0] $end
+$upscope $end
+$scope module X4 $end
+$var wire 1 K DEC $end
+$var wire 5 L NUM [4:0] $end
+$var wire 1 M SIGN $end
+$var reg 8 N HEX [7:0] $end
+$upscope $end
+$scope module X5 $end
+$var wire 1 O DEC $end
+$var wire 5 P NUM [4:0] $end
+$var wire 1 Q SIGN $end
+$var reg 8 R HEX [7:0] $end
+$upscope $end
+$upscope $end
+$scope module U1 $end
+$var wire 2 S KEY [1:0] $end
+$var wire 10 T SW [9:0] $end
+$var wire 10 U led [9:0] $end
+$upscope $end
+$upscope $end
+$scope module U2 $end
+$var wire 2 V KEY [1:0] $end
+$var wire 8 W HEX5 [7:0] $end
+$var wire 8 X HEX4 [7:0] $end
+$var wire 8 Y HEX3 [7:0] $end
+$var wire 8 Z HEX2 [7:0] $end
+$var wire 8 [ HEX1 [7:0] $end
+$var wire 8 \ HEX0 [7:0] $end
+$scope module X0 $end
+$var wire 1 ] DEC $end
+$var wire 5 ^ NUM [4:0] $end
+$var wire 1 _ SIGN $end
+$var reg 8 ` HEX [7:0] $end
+$upscope $end
+$scope module X1 $end
+$var wire 1 a DEC $end
+$var wire 5 b NUM [4:0] $end
+$var wire 1 c SIGN $end
+$var reg 8 d HEX [7:0] $end
+$upscope $end
+$scope module X2 $end
+$var wire 1 e DEC $end
+$var wire 5 f NUM [4:0] $end
+$var wire 1 g SIGN $end
+$var reg 8 h HEX [7:0] $end
+$upscope $end
+$scope module X3 $end
+$var wire 1 i DEC $end
+$var wire 5 j NUM [4:0] $end
+$var wire 1 k SIGN $end
+$var reg 8 l HEX [7:0] $end
+$upscope $end
+$scope module X4 $end
+$var wire 1 m DEC $end
+$var wire 5 n NUM [4:0] $end
+$var wire 1 o SIGN $end
+$var reg 8 p HEX [7:0] $end
+$upscope $end
+$scope module X5 $end
+$var wire 1 q DEC $end
+$var wire 5 r NUM [4:0] $end
+$var wire 1 s SIGN $end
+$var reg 8 t HEX [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11000000 t
+zs
+b0 r
+zq
+b10011001 p
+zo
+b100 n
+zm
+b10100100 l
+zk
+b10 j
+zi
+b10010000 h
+zg
+b1001 f
+ze
+b10100100 d
+zc
+b10 b
+za
+b11000000 `
+0_
+b0 ^
+0]
+b11000000 \
+b10100100 [
+b10010000 Z
+b10100100 Y
+b10011001 X
+b11000000 W
+b11 V
+bz00011111 U
+b11111 T
+b11 S
+b11000000 R
+zQ
+b0 P
+zO
+b10011001 N
+zM
+b100 L
+zK
+b10100100 J
+zI
+b10 H
+zG
+b10010000 F
+zE
+b1001 D
+zC
+b10100100 B
+zA
+b10 @
+z?
+b11000000 >
+0=
+b0 <
+0;
+b11000000 :
+b10100100 9
+b10010000 8
+b10100100 7
+b10011001 6
+b11000000 5
+b11 4
+b11000000 3
+b10100100 2
+b10010000 1
+b10100100 0
+b10011001 /
+b11000000 .
+bz00011111 -
+b11111 ,
+z+
+z*
+b11 )
+z(
+b11111 '
+b11 &
+b11000000 %
+b10100100 $
+b10010000 #
+b10100100 "
+bz00011111 !
+$end
+#100
+bz11100000 !
+bz11100000 -
+bz11100000 U
+b10 &
+b10 )
+b10 4
+b10 S
+b10 V
+#200
+b0 &
+b0 )
+b0 4
+b0 S
+b0 V
+#300
+bz00011111 !
+bz00011111 -
+bz00011111 U
+b1 &
+b1 )
+b1 4
+b1 S
+b1 V
+#400

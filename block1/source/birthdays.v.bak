@@ -1,0 +1,38 @@
+module birthdays(
+
+		 input [1:0]  KEY,
+	          
+		 output [7:0] HEX0,
+		 output [7:0] HEX1,
+		 output [7:0] HEX2,
+		 output [7:0] HEX3,
+		 output [7:0] HEX4,
+		 output [7:0] HEX5,
+	      	 );
+
+   hex_driver X0 (
+		  .NUM (4'b0000),
+		  .HEX(HEX0)
+		  );
+   hex_driver X1 (
+		  .NUM (4'b0000),
+		  .HEX(HEX0)
+		  );
+   hex_driver X2 (
+		  .NUM (4'b0001),
+		  .HEX(HEX0)
+		  );
+   hex_driver X3 (
+		  .NUM (4'b0010),
+		  .HEX(HEX0)
+		  );
+   hex_driver X4 (
+		  .NUM (4'b0100),
+		  .HEX(HEX0)
+		  );
+   hex_driver X5 (
+		  .NUM (4'b0000),
+		  .HEX(HEX0)
+		  );
+   
+endmodule // birthdays

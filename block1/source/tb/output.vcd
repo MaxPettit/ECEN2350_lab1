@@ -1,0 +1,74 @@
+$date
+	Thu Sep 26 11:11:40 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module block1_tb $end
+$var wire 10 ! LED [9:0] $end
+$var reg 2 " KEY [1:0] $end
+$var reg 10 # SW [9:0] $end
+$scope module U1 $end
+$var wire 1 $ ADC_CLK_10 $end
+$var wire 8 % HEX0 [7:0] $end
+$var wire 8 & HEX1 [7:0] $end
+$var wire 8 ' HEX2 [7:0] $end
+$var wire 8 ( HEX3 [7:0] $end
+$var wire 8 ) HEX4 [7:0] $end
+$var wire 8 * HEX5 [7:0] $end
+$var wire 2 + KEY [1:0] $end
+$var wire 1 , MAX10_CLK1_50 $end
+$var wire 1 - MAX10_CLK2_50 $end
+$var wire 10 . SW [9:0] $end
+$var wire 10 / LEDR [9:0] $end
+$scope module U1 $end
+$var wire 2 0 KEY [1:0] $end
+$var wire 10 1 SW [9:0] $end
+$var wire 10 2 led [9:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz00011111 2
+b11111 1
+b11 0
+bz00011111 /
+b11111 .
+z-
+z,
+b11 +
+bz *
+bz )
+bz (
+bz '
+bz &
+bz %
+z$
+b11111 #
+b11 "
+bz00011111 !
+$end
+#100
+bz11100000 !
+bz11100000 /
+bz11100000 2
+b10 "
+b10 +
+b10 0
+#200
+b0 "
+b0 +
+b0 0
+#300
+bz00011111 !
+bz00011111 /
+bz00011111 2
+b1 "
+b1 +
+b1 0
+#400

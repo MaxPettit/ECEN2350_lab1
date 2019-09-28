@@ -1,0 +1,32 @@
+`timescale 1 ns / 100 ps
+module block1_tb();
+
+   reg;
+   wire ;
+
+   Complete U1 (
+		);
+   
+
+   initial  
+     begin
+	$dumpfile("output.vcd");
+	$dumpvars;
+	$display("Starting simulation"); 
+              
+	a = 0;     
+	b = 0;  
+       
+	#10   a = 1;         
+	#10   b = 1;    
+	#10   a = 0;
+	#10   $display("Simulation ended.");
+	$finish;  
+     end // initial begin
+
+   initial    
+     begin      
+	$monitor($time, "  a = %b,  b = %b,  c = %b", a, b, c);    
+     end
+   
+endmodule // block1_tb
