@@ -2,9 +2,10 @@
  * Input 4 bit number for hex to diplay 
  * 	if no num specified, display will be off
  * Input 1 bit for decimal, 1 to display
- * Input 01 bit for sign, 00 for positive
+ * Input 1 bit for sign, 0 for positive
  *   if sign (-), number input ignored
- *   if binary 2, hex will be blank
+ * Input 1 bit for off, 1 meaning display dark
+ *   decimal may still be turned on
  */
 
 module hex_driver(
