@@ -41,6 +41,7 @@ module slide_in(
 	   
 	   if(x[3]) begin
 	      a = ~x + 1;
+		  
 	      
 	   end
 	   if(y[3]) begin
@@ -49,6 +50,7 @@ module slide_in(
 	   end
 	   
 	end // if (MODE)
+	// add function
 	
      end // always @ (x, y)
 
@@ -75,6 +77,9 @@ module slide_in(
 		  .NUM (b), //dec y
 		  .HEX (HEX2)
 		  );
+   hex_driver H0 (
+		  .SIGN(
+   hex_driver H1
    
    
 endmodule // slide_in
