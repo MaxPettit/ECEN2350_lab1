@@ -9,22 +9,23 @@
 
 module hex_driver(
 		  
-		  input [3:0] 	   NUM,
-		  input 	   DEC,
-		  input  	   SIGN,
-
+		  input [3:0]  NUM,
+		  input        DEC,
+		  input        SIGN,
+		  input 			OFF,
+	      
 		  output reg [7:0] HEX
-
+		  
 		  );
-   
-   
+		  
+		
 
    always @(NUM, DEC, SIGN)
      begin
 	if(~SIGN)
-	  begin
-	     HEX = 8'b11111111;
-	  end
+	 begin
+	  HEX = 8'b11111111;
+	 end
 	
 	case(NUM)
 	  4'b0000: //dec 0
@@ -60,20 +61,24 @@ module hex_driver(
 	  4'b1111: //hex F
 	    HEX = 8'b10001110;
 	  default:
-	    HEX = 8'b11111111;
+	HEX = 8'b11111111;
 	endcase // case (NUM)
 
 	
-	if(SIGN)
-	  begin
-	     HEX = 8'b10111111;
-	  end
+	 if(SIGN)
+	 begin
+	  HEX = 8'b10111111;
+	 end
+	
+	if(OFF)
+	 begin
+	  HEX = 8'b11111111;
+	 end
 	
 	if(DEC)
-	  begin
-	     HEX = HEX & 8'b01111111;
-	  end
+	 begin
+	  HEX = HEX & 8'b01111111;
+	 end
 	
      end
-endmodule
-
+   endmodule
