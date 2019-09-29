@@ -30,20 +30,9 @@ module slide_in(
    reg [3:0] 		     a;
    reg [3:0] 		     b;
    
-   
-   hex_driver H5 (
-		  .SIGN(x[3]),
-		  .OFF(~x[3]),
-		  .HEX (HEX5)
-		  );
-   
-   hex_driver H3 (
-		  .SIGN(y[3]),
-		  .OFF(~y[3]),
-		  .HEX (HEX3)
-		  );
-   
-   always @(x, y)
+
+
+    always @(x, y)
      begin
 	a = x;
 	b = y;
@@ -62,9 +51,20 @@ module slide_in(
 	end // if (MODE)
 	
      end // always @ (x, y)
+
    
+   hex_driver H5 (
+		  .SIGN(x[3]),
+		  .OFF(~x[3]),
+		  .HEX (HEX5)
+		  );
    
-   
+   hex_driver H3 (
+		  .SIGN(y[3]),
+		  .OFF(~y[3]),
+		  .HEX (HEX3)
+		  );
+      
    
    hex_driver H4 (
 		  .NUM (a), //dec x
