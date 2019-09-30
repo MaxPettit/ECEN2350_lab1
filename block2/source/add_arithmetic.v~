@@ -1,0 +1,15 @@
+module add_arithmetic(input [3:0] a, input[3:0] b, output [7:0] HEX0,
+		      output [7:0] HEX1)
+
+  always @(a, b)
+    begin
+       while(b != 0)
+	 begin
+	    assign carry = a & b
+			   a = a ^ b;
+	    b = carry << 1;
+	 end
+    end
+   hex_driver H0 (.SIGN(a[3], .OFF(~a[3]), .HEX(HEX0));
+
+		  endmodule

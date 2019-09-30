@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Complete
-Sat Sep 28 00:44:06 2019
+Sun Sep 29 18:01:04 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,14 +13,16 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
   7. General Register Statistics
-  8. Port Connectivity Checks: "slide_in:U0|hex_driver:H2"
-  9. Port Connectivity Checks: "slide_in:U0|hex_driver:H4"
- 10. Port Connectivity Checks: "slide_in:U0|hex_driver:H3"
- 11. Port Connectivity Checks: "slide_in:U0|hex_driver:H5"
- 12. Port Connectivity Checks: "slide_in:U0"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. Port Connectivity Checks: "slide_in:U0|hex_driver:H1"
+  9. Port Connectivity Checks: "slide_in:U0|hex_driver:H0"
+ 10. Port Connectivity Checks: "slide_in:U0|hex_driver:H2"
+ 11. Port Connectivity Checks: "slide_in:U0|hex_driver:H4"
+ 12. Port Connectivity Checks: "slide_in:U0|hex_driver:H3"
+ 13. Port Connectivity Checks: "slide_in:U0|hex_driver:H5"
+ 14. Port Connectivity Checks: "slide_in:U0"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -46,13 +48,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 28 00:44:06 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 29 18:01:04 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Complete                                    ;
 ; Top-level Entity Name              ; Complete                                    ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 14                                          ;
-;     Total combinational functions  ; 14                                          ;
+; Total logic elements               ; 43                                          ;
+;     Total combinational functions  ; 43                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 73                                          ;
@@ -167,16 +169,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 14          ;
+; Estimated Total logic elements              ; 43          ;
 ;                                             ;             ;
-; Total combinational functions               ; 14          ;
+; Total combinational functions               ; 43          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 10          ;
-;     -- 3 input functions                    ; 4           ;
-;     -- <=2 input functions                  ; 0           ;
+;     -- 4 input functions                    ; 34          ;
+;     -- 3 input functions                    ; 5           ;
+;     -- <=2 input functions                  ; 4           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 14          ;
+;     -- normal mode                          ; 43          ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 0           ;
@@ -187,10 +189,10 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; SW[0]~input ;
-; Maximum fan-out                             ; 7           ;
-; Total fan-out                               ; 141         ;
-; Average fan-out                             ; 0.88        ;
+; Maximum fan-out node                        ; SW[2]~input ;
+; Maximum fan-out                             ; 14          ;
+; Total fan-out                               ; 256         ;
+; Average fan-out                             ; 1.35        ;
 +---------------------------------------------+-------------+
 
 
@@ -199,8 +201,9 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                 ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-------------+--------------+
-; |Complete                  ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 73   ; 0            ; 0          ; |Complete                           ; Complete    ; work         ;
-;    |slide_in:U0|           ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|slide_in:U0               ; slide_in    ; work         ;
+; |Complete                  ; 43 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 73   ; 0            ; 0          ; |Complete                           ; Complete    ; work         ;
+;    |slide_in:U0|           ; 43 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|slide_in:U0               ; slide_in    ; work         ;
+;       |hex_driver:H0|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|slide_in:U0|hex_driver:H0 ; hex_driver  ; work         ;
 ;       |hex_driver:H2|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|slide_in:U0|hex_driver:H2 ; hex_driver  ; work         ;
 ;       |hex_driver:H4|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Complete|slide_in:U0|hex_driver:H4 ; hex_driver  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-------------+--------------+
@@ -220,6 +223,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "slide_in:U0|hex_driver:H1"                                                                                                                  ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; NUM  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "slide_in:U0|hex_driver:H0"                                                                                                                  ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; DEC  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SIGN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; OFF  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -269,6 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; MODE ; Input  ; Info     ; Stuck at VCC                                                                                             ;
 ; x    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; y    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -280,15 +305,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 73                          ;
-; cycloneiii_lcell_comb ; 20                          ;
-;     normal            ; 20                          ;
+; cycloneiii_lcell_comb ; 51                          ;
+;     normal            ; 51                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 10                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 34                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.29                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -307,10 +333,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Sep 28 00:43:39 2019
+    Info: Processing started: Sun Sep 29 18:00:40 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Complete -c Complete
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20029): Only one processor detected - disabling parallel compilation
+Info (12021): Found 1 design units, including 1 entities, in source file /home/ecen1310/ecen2350/lab_1/block2/source/add_arithmetic.v
+    Info (12023): Found entity 1: add_arithmetic File: /home/ecen1310/ecen2350/lab_1/block2/source/add_arithmetic.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v
     Info (12023): Found entity 1: Complete File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v
@@ -318,32 +346,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/e
 Info (12021): Found 1 design units, including 1 entities, in source file /home/ecen1310/ecen2350/lab_1/block2/source/hex_driver.v
     Info (12023): Found entity 1: hex_driver File: /home/ecen1310/ecen2350/lab_1/block2/source/hex_driver.v Line: 10
 Info (12127): Elaborating entity "Complete" for the top level hierarchy
-Warning (10034): Output port "HEX0" at Complete.v(14) has no driver File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-Warning (10034): Output port "HEX1" at Complete.v(15) has no driver File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
 Warning (10034): Output port "LEDR" at Complete.v(25) has no driver File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 25
-Info (12128): Elaborating entity "slide_in" for hierarchy "slide_in:U0" File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 50
-Warning (10230): Verilog HDL assignment warning at slide_in.v(51): truncated value with size 32 to match size of target (4) File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 51
-Warning (10230): Verilog HDL assignment warning at slide_in.v(55): truncated value with size 32 to match size of target (4) File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 55
-Info (12128): Elaborating entity "hex_driver" for hierarchy "slide_in:U0|hex_driver:H5" File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 37
+Info (12128): Elaborating entity "slide_in" for hierarchy "slide_in:U0" File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 53
+Warning (10235): Verilog HDL Always Construct warning at slide_in.v(46): variable "MODE" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 46
+Warning (10230): Verilog HDL assignment warning at slide_in.v(49): truncated value with size 32 to match size of target (4) File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 49
+Warning (10230): Verilog HDL assignment warning at slide_in.v(54): truncated value with size 32 to match size of target (4) File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 54
+Warning (10240): Verilog HDL Always Construct warning at slide_in.v(41): inferring latch(es) for variable "carry", which holds its previous value in one or more paths through the always construct File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 41
+Info (12128): Elaborating entity "hex_driver" for hierarchy "slide_in:U0|hex_driver:H5" File: /home/ecen1310/ecen2350/lab_1/block2/source/slide_in.v Line: 78
 Warning (10235): Verilog HDL Always Construct warning at hex_driver.v(73): variable "OFF" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ecen1310/ecen2350/lab_1/block2/source/hex_driver.v Line: 73
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX0[7]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
-    Warning (13410): Pin "HEX1[7]" is stuck at GND File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 14
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 15
     Warning (13410): Pin "HEX2[7]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 16
     Warning (13410): Pin "HEX3[0]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 17
     Warning (13410): Pin "HEX3[1]" is stuck at VCC File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 17
@@ -381,14 +401,14 @@ Warning (21074): Design contains 7 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 22
     Warning (15610): No output dependent on input pin "SW[8]" File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 29
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/ecen1310/ecen2350/lab_1/block2/source/Complete.v Line: 29
-Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 116 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 947 megabytes
-    Info: Processing ended: Sat Sep 28 00:44:06 2019
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:20
+    Info (21061): Implemented 43 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 946 megabytes
+    Info: Processing ended: Sun Sep 29 18:01:04 2019
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:19
 
 

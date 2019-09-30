@@ -12,6 +12,8 @@ module slide_in(
 		output [7:0] HEX4,
 		output [7:0] HEX3,
 		output [7:0] HEX2,
+		output [7:0] HEX0,
+		output [7:0] HEX1,
 		output [3:0] x,
 		output [3:0] y
 		);
@@ -29,6 +31,10 @@ module slide_in(
 
    reg [3:0] 		     a;
    reg [3:0] 		     b;
+	reg[3:0] 				num1;
+	reg[3:0] 				num2;
+	reg[3:0] 	carry;
+	
    
 
 
@@ -52,6 +58,16 @@ module slide_in(
 	end // if (MODE)
 	// add function
 	
+	num1 = x;
+	num2 = y;
+
+    while(num2 != 0)
+	 begin
+	    carry = num1 & num2;
+	    
+			   num1 = num1 ^ num2;
+	    num2 = carry << 1;
+	 end
      end // always @ (x, y)
 
    
@@ -77,9 +93,25 @@ module slide_in(
 		  .NUM (b), //dec y
 		  .HEX (HEX2)
 		  );
-   hex_driver H0 (
-		  .SIGN(
-   hex_driver H1
+	  hex_driver H0 (
+	  .NUM(num1), .HEX(HEX0)
+	  );
+	  hex_driver H1 (
+	  .SIGN(num1[3]), 
+	  .OFF(~num1[3]),
+	  .HEX(HEX1)
+	  );
+
+  /* add_arithmetic U1 (
+		   .a(x),
+		   .b(y),
+		   .HEX0(HEX0),
+		   .HEX1(HEX1)
+		   );*/
+			
+			
    
+   
+			
    
 endmodule // slide_in
