@@ -6,6 +6,7 @@
 module slide_in(
 
 		input [9:0]  SW,
+	input [1:0]  KEY,
 		input 	     MODE,
    
 		output [7:0] HEX5,
@@ -34,6 +35,7 @@ module slide_in(
 	reg[3:0] 				num1;
 	reg[3:0] 				num2;
 	reg[3:0] 	carry;
+	reg[3:0]  	overflow;
 	
    
 
@@ -61,14 +63,43 @@ module slide_in(
 	num1 = x;
 	num2 = y;
 
-    while(num2 != 0)
+    
+     end // always @ (x, y)
+     always @(posedge KEY[0])
+     begin
+	  
+	if(~KEY[0]) begin
+	   k = ~k;
+	   
+	end
+	
+
+	if(k) begin
+	  while(num2 != 0)
+	 begin
+	    carry = ~num1 & num2;
+	    
+			   num1 = num1 ^ num2;
+	    num2 = carry << 1;
+	 end
+	   overflow = (x-y) >> 3;
+	end
+	else begin
+	  while(num2 != 0)
 	 begin
 	    carry = num1 & num2;
 	    
 			   num1 = num1 ^ num2;
 	    num2 = carry << 1;
 	 end
-     end // always @ (x, y)
+	    overflow = (x+y) >> 3;
+	end
+	
+	if(overflow == 1)begin
+	 num1 = 4b'1111;
+	end
+
+     end
 
    
    hex_driver H5 (
